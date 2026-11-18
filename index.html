@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fun and Play Keys</title>
+<title>Fun n Play — play music with your hands</title>
 <meta name="description" content="A camera-controlled piano and synth. Point, pinch and play — right in your browser.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 <!-- Open-source libraries (GitHub): Tone.js (MIT), canvas-confetti (ISC), Three.js (MIT), MediaPipe Tasks (Apache-2.0, loaded on demand) -->
 <script src="https://cdn.jsdelivr.net/npm/tone@14.7.77/build/Tone.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
@@ -221,6 +221,89 @@ body.hc .key.down .lbl{color:#000;text-shadow:none}
 @media (max-width:900px){ #leftCol{width:240px} #pip canvas{width:222px;height:166px} .vol input{width:60px} }
 @media (prefers-reduced-motion:reduce){ *{transition-duration:.01s!important;animation-duration:.01s!important} }
 body.reduce .key{transition-duration:.05s}
+
+/* ===================== Kids theme (ages 5–10) =====================
+   Big rounded type (Fredoka), chunky 3D buttons, rainbow note colours, emoji note friends. */
+body.kids{--text:#2b2d42;--muted:#55607a;--dim:#7a819a;--line:#e6e8f5;--a1:#ff6b6b;--a2:#3d8bff;font-family:Fredoka,'Baloo 2',Inter,system-ui,sans-serif;font-size:17px}
+body.kids h1,body.kids h2,body.kids h3{font-family:Fredoka,sans-serif;font-weight:700;letter-spacing:.2px}
+body.kids .glass{background:rgba(255,255,255,.93);-webkit-backdrop-filter:none;backdrop-filter:none;border:3px solid #fff;border-radius:28px;box-shadow:0 8px 0 rgba(43,45,66,.10),0 18px 40px rgba(43,45,66,.20);color:var(--text)}
+body.kids #fallbackBg{background:
+  radial-gradient(120px 60px at 12% 22%,#fff 60%,transparent 62%),radial-gradient(90px 46px at 18% 18%,#fff 60%,transparent 62%),
+  radial-gradient(140px 70px at 82% 30%,#fff 60%,transparent 62%),radial-gradient(100px 50px at 88% 25%,#fff 60%,transparent 62%),
+  radial-gradient(60% 40% at 50% 100%,#c8f7c5,transparent 70%),linear-gradient(180deg,#7fd1ff 0%,#bfeaff 55%,#fff6d6 100%)}
+body.kids #vignette{background:none!important}
+body.kids #overlay{background:rgba(127,209,255,.35)}
+body.kids #topbar{padding:10px 12px 10px 16px;gap:8px;flex-wrap:nowrap}
+body.kids #status{display:none}
+body.kids .vol input{width:80px}
+body.kids #topbar .btn{padding:0 14px}
+body.kids #leftCol{top:106px;max-height:calc(100vh - 130px - clamp(150px,28vh,260px))}
+body.kids .panel{top:106px;max-height:calc(100vh - 140px - clamp(170px,34vh,300px))}
+body.kids.mirror .panel{max-height:calc(var(--trayTop,66vh) - 122px)}
+body.kids .panel .btn{white-space:nowrap;font-size:17px}
+body.kids #toast{top:108px}
+body.kids #calib{top:108px}
+@media (max-width:1200px){ body.kids #topbar .btn:not(.icon){font-size:16px;padding:0 10px} body.kids .brand h1{font-size:21px} body.kids .seg button{padding:10px 11px;font-size:16px} }
+body.kids .logo{width:42px;height:42px;border-radius:14px;background:conic-gradient(#ff4b4b,#ff9f1c,#ffd60a,#2ecc71,#18c3d6,#5b5bf0,#b05cf0,#ff4b4b);box-shadow:0 4px 0 rgba(0,0,0,.12)}
+body.kids .brand h1{font-size:26px;background:linear-gradient(90deg,#ff4b4b,#ff9f1c,#2ecc71,#3d8bff,#b05cf0);-webkit-background-clip:text;background-clip:text;color:transparent}
+body.kids .btn{height:54px;min-width:54px;padding:0 18px;border-radius:20px;border:3px solid #eceefa;background:#fff;color:#2b2d42;font-weight:600;font-size:18px;box-shadow:0 5px 0 #dfe2f2;transition:transform .08s,box-shadow .08s}
+body.kids .btn:hover{background:#f7f8ff;border-color:#d7dbf5}
+body.kids .btn:active{transform:translateY(4px);box-shadow:0 1px 0 #dfe2f2}
+body.kids .btn.primary{background:linear-gradient(135deg,#ff8a00,#ff3d77);color:#fff;border-color:#fff;box-shadow:0 5px 0 #c92d5c;font-size:20px}
+body.kids .btn.on{background:#e6f9ee;border-color:#2ecc71;box-shadow:0 5px 0 #25a85c}
+body.kids .btn.icon{width:54px;padding:0;font-size:22px}
+body.kids .seg{padding:5px;border-radius:22px;background:#f1f3ff;border:3px solid #fff}
+body.kids .seg button{font-size:18px;padding:10px 16px;border-radius:16px;color:#55607a;font-weight:600}
+body.kids .seg button.active{background:#fff;color:#2b2d42;box-shadow:0 4px 0 #dfe2f2}
+body.kids select{height:54px;border-radius:18px;border:3px solid #eceefa;background:#fff;color:#2b2d42;font-size:16px}
+body.kids select option{background:#fff;color:#2b2d42}
+body.kids .chip{height:46px;font-size:16px;background:#fff;border:3px solid #eceefa;color:#55607a;font-weight:600}
+body.kids .oct span{font-size:19px;font-weight:700;color:#2b2d42}
+body.kids .vol{color:#55607a}
+body.kids input[type=range]{accent-color:#ff6b6b}
+body.kids .switch{width:56px;height:32px} body.kids .switch span{background:#dfe2f2;border:none} body.kids .switch span::after{width:24px;height:24px;top:4px;left:4px}
+body.kids .switch input:checked+span{background:linear-gradient(135deg,#2ecc71,#18c3d6)} body.kids .switch input:checked+span::after{transform:translateX(24px)}
+body.kids .panel{border-radius:28px} body.kids .panel h2{font-size:24px}
+body.kids .section-t,body.kids .cap{color:#7a819a!important;font-weight:600}
+body.kids .song{font-size:17px;padding:12px 14px;border-radius:18px;border:3px solid #eceefa;background:#fff}
+body.kids .song.active{border-color:#ff9f1c;background:#fff6e6}
+body.kids .stars{color:#ffb300;font-size:18px}
+body.kids .progress{height:14px;border-radius:10px;background:#eceefa} body.kids .progress i{background:linear-gradient(90deg,#ff4b4b,#ff9f1c,#ffd60a,#2ecc71,#3d8bff)}
+body.kids .state{background:#f1f3ff;color:#55607a;font-size:13px;border-radius:10px}
+body.kids .state.over{background:#e7f0ff;color:#3d8bff} body.kids .state.play{background:#2ecc71;color:#fff;box-shadow:none}
+body.kids .pbar{background:#eceefa}
+body.kids .fchip{background:#f1f3ff;color:#55607a;font-size:15px;border:2px solid transparent;border-radius:12px;padding:8px 0}
+body.kids .fchip b{color:#7a819a} body.kids .fchip.over{border-color:#3d8bff;color:#3d8bff} body.kids .fchip.play{background:#2ecc71;color:#fff}
+body.kids .card{border-radius:34px} body.kids .card h2{font-size:32px} body.kids .card p{font-size:18px;color:#55607a}
+body.kids .steps i{height:8px;width:36px;background:#e6e8f5} body.kids .steps i.on{background:linear-gradient(90deg,#ff9f1c,#ff3d77)}
+body.kids .help-grid div{background:#f7f8ff;border:3px solid #eceefa;border-radius:20px;font-size:15px;color:#55607a}
+body.kids .help-grid b{color:#2b2d42;font-size:19px}
+body.kids #toast{font-size:18px;padding:14px 20px;border-radius:20px}
+body.kids #monitor{font-size:15px} body.kids .mon-last b{font-size:24px}
+body.kids #noteCard .big{font-family:Fredoka;font-size:44px}
+/* keys */
+body.kids #tray{background:rgba(255,255,255,.35);border:3px solid rgba(255,255,255,.9);border-radius:30px;box-shadow:0 10px 30px rgba(43,45,66,.15)}
+body.kids.mirror #tray{background:transparent;border:none;box-shadow:none}
+body.kids .key{border-radius:0 0 24px 24px}
+body.kids .key.white{margin:0 5px;background:linear-gradient(to bottom,color-mix(in srgb,var(--kc) 55%,#fff),var(--kc))!important;border:4px solid #fff!important;
+  box-shadow:0 8px 0 color-mix(in srgb,var(--kc) 65%,#000)!important;padding-bottom:16px}
+body.kids.mirror .key.white{opacity:.82}
+body.kids .key.black{background:linear-gradient(to bottom,#46497a,#2b2d42)!important;border:3px solid #fff!important;border-radius:0 0 18px 18px;
+  box-shadow:inset 0 -14px 0 var(--kc),0 6px 0 rgba(0,0,0,.25)!important}
+body.kids.mirror .key.black{opacity:.9}
+body.kids .key .lbl{font-family:Fredoka,sans-serif;font-size:28px;font-weight:700;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.28);display:flex;flex-direction:column;align-items:center;gap:4px;line-height:1}
+body.kids .key .emo{font-size:36px;text-shadow:none;filter:drop-shadow(0 3px 0 rgba(0,0,0,.15));transition:transform .2s}
+body.kids .key.black .lbl{font-size:15px} body.kids .key.black .emo{font-size:22px}
+body.kids .key .sub{color:rgba(255,255,255,.95);font-weight:600}
+body.kids .key.hover{transform:translateY(-5px);outline:none;box-shadow:0 0 0 5px #fff,0 0 0 10px var(--kc),0 13px 0 color-mix(in srgb,var(--kc) 65%,#000)!important}
+body.kids .key.black.hover{box-shadow:inset 0 -14px 0 var(--kc),0 0 0 5px #fff,0 0 0 9px var(--kc)!important}
+body.kids .key.hover .emo{transform:scale(1.25) rotate(-8deg)}
+body.kids .key.down{transform:translateY(7px) scale(.97)!important;filter:brightness(1.15) saturate(1.2);box-shadow:0 0 0 6px #fff,0 0 50px var(--kc),0 1px 0 color-mix(in srgb,var(--kc) 65%,#000)!important}
+body.kids .key.down .emo{animation:boing .35s ease}
+@keyframes boing{0%{transform:scale(1)}40%{transform:scale(1.55) rotate(10deg)}100%{transform:scale(1.15)}}
+body.kids .key.next::after,body.kids .key.target::after{border-radius:0 0 28px 28px;border:5px dashed #fff;box-shadow:0 0 30px #fff,0 0 0 4px #ff9f1c}
+body.kids.reduce .key.down .emo,body.kids.reduce .key.hover .emo{animation:none;transform:none}
+@media (prefers-reduced-motion:reduce){ body.kids .key .emo{animation:none!important} }
 </style>
 </head>
 <body>
@@ -233,19 +316,19 @@ body.reduce .key{transition-duration:.05s}
 
 <!-- Top bar -->
 <header id="topbar" class="glass">
-  <div class="brand"><div class="logo"></div><h1>Fun and Play Keys</h1></div>
+  <div class="brand"><div class="logo"></div><h1>Fun n Play</h1></div>
   <div class="seg" role="tablist" aria-label="Instrument">
-    <button data-inst="piano" class="active">Piano</button>
-    <button data-inst="synth">Synth</button>
+    <button data-inst="piano" class="active">🎹 Piano</button>
+    <button data-inst="synth">🎶 Synth</button>
   </div>
   <select id="preset" aria-label="Synth sound" class="hidden"></select>
   <div class="oct"><button class="btn icon" id="octDown" aria-label="Lower octave">‹</button><span id="octLabel">C4</span><button class="btn icon" id="octUp" aria-label="Higher octave">›</button></div>
   <div class="vol"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4zM15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><input id="volume" type="range" min="0" max="1" step="0.01" aria-label="Volume"></div>
   <div class="spacer"></div>
   <div class="chip" id="status"><span class="dot" id="statusDot"></span><span id="statusText">Camera off</span></div>
-  <button class="btn" id="camBtn">Camera</button>
-  <button class="btn" id="learnBtn">Learn a tune</button>
-  <button class="btn" id="sceneBtn">Scene</button>
+  <button class="btn" id="camBtn">📷 Camera</button>
+  <button class="btn" id="learnBtn">⭐ Songs</button>
+  <button class="btn" id="sceneBtn">🌈 Scene</button>
   <button class="btn icon" id="settingsBtn" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
   <button class="btn icon" id="helpBtn" aria-label="Help">?</button>
 </header>
@@ -254,11 +337,11 @@ body.reduce .key{transition-duration:.05s}
 <div id="leftCol">
   <div id="pip" class="glass hidden"><canvas id="pipCanvas" width="640" height="480"></canvas><div class="chip" id="pipHint">Looking for your hands…</div></div>
   <div id="monitor" class="glass">
-    <div class="cap" style="font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.8px">Gesture monitor</div>
+    <div class="cap" style="font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.8px">👋 My hands</div>
     <div id="monHands" style="color:var(--muted);margin:8px 0">Camera is off.</div>
     <div class="mon-last">Last note: <b id="monLast">—</b> <span id="monAgo" style="color:var(--dim)"></span></div>
     <div class="mon-meta"><span id="monAudio">Sound: off</span> · <span id="monCount">0 notes played</span></div>
-    <div class="mon-actions"><button class="btn" id="calibBtn">Calibrate area</button><button class="btn" id="testBtn">Test sound</button></div>
+    <div class="mon-actions"><button class="btn" id="calibBtn">📏 Calibrate</button><button class="btn" id="testBtn">🔊 Test sound</button></div>
   </div>
   <div id="noteCard" class="glass">
     <div class="cap">Now playing</div>
@@ -277,7 +360,7 @@ body.reduce .key{transition-duration:.05s}
 <!-- Learn panel -->
 <aside id="learnPanel" class="panel glass hidden" aria-label="Learn a tune">
   <button class="btn icon close" data-close="learnPanel" aria-label="Close">✕</button>
-  <h2>Learn a tune</h2>
+  <h2>⭐ Songs</h2>
   <p class="desc">Auto-play <b>on</b>: the piano plays by itself. <b>Off</b>: the next key glows and waits for you.</p>
   <div class="songs" id="songList"></div>
   <div class="row"><label for="autoPlay">Auto-play (piano plays by itself)</label><label class="switch"><input type="checkbox" id="autoPlay"><span></span></label></div>
@@ -316,6 +399,7 @@ body.reduce .key{transition-duration:.05s}
   <div class="row"><label for="activeF">Active fingers</label><select id="activeF"><option value="index">One per hand (index)</option><option value="all">All five fingers</option></select></div>
   <div class="row"><label for="dwellT">Hover-hold time <span id="dwellLbl"></span></label><input type="range" id="dwellT" min="0.25" max="1.5" step="0.05"></div>
   <div class="row"><label for="trayW">Keyboard width</label><input type="range" id="trayW" min="40" max="96" step="1"></div>
+  <div class="row"><label for="kidsT">Kids look (bright &amp; bubbly)</label><label class="switch"><input type="checkbox" id="kidsT"><span></span></label></div>
   <div class="row"><label for="hc">High-contrast keys</label><label class="switch"><input type="checkbox" id="hc"><span></span></label></div>
   <div class="row"><label for="sens">Gesture sensitivity</label><input type="range" id="sens" min="0.7" max="1.4" step="0.05"></div>
   <div class="row"><label for="mirrorT">Full-screen camera (play on the video)</label><label class="switch"><input type="checkbox" id="mirrorT"><span></span></label></div>
@@ -354,8 +438,12 @@ const NUMS=['1','1♯','2','2♯','3','4','4♯','5','5♯','6','6♯','7'];
 const isBlack = m => [1,3,6,8,10].includes(m%12);
 const midiName = m => NAMES[m%12]+(Math.floor(m/12)-1);
 const nameMidi = n => { const r=/^([A-G]#?)(-?\d)$/.exec(n); return NAMES.indexOf(r[1])+12*(+r[2]+1); };
-const hue = m => (m%12)/12*360;
-const kcolor = m => `hsl(${hue(m)} 92% 66%)`;
+// Boomwhackers classroom colours: C red, D orange, E yellow, F green, G teal, A indigo, B violet
+const KID_COL=['#ff4b4b','#ff7a33','#ff9f1c','#ffc21c','#ffd60a','#2ecc71','#1fd1a1','#18c3d6','#3d8bff','#5b5bf0','#8a5cf6','#b05cf0'];
+const KID_HUE=[0,20,33,44,50,145,163,187,215,240,258,280];
+const FRIEND=['🍎','🌶️','🍊','🌻','🍋','🍀','🐢','🐳','💧','🫐','🦋','🍇'];
+const hue = m => KID_HUE[m%12];
+const kcolor = m => KID_COL[m%12];
 const prettyName = m => midiName(m).replace('#','♯');
 
 const DEFAULTS={instrument:'piano',preset:'pad',volume:.8,gesture:'fingers',sens:1,octaves:2,baseOct:4,scale:'off',
@@ -510,10 +598,11 @@ const Keys={list:[],byMidi:new Map(),hovered:new Set(),forceChromatic:false,rang
   labels(){
     for(const k of this.list){ const pc=k.midi%12, o=Math.floor(k.midi/12)-1;
       const l=k.el.querySelector('.lbl'), s=k.el.querySelector('.sub');
-      if(S.labels==='none'){ l.textContent=''; s.textContent=''; continue; }
-      if(S.labels==='solfege'){ l.textContent=SOLF[pc]; s.textContent=prettyName(k.midi); }
-      else if(S.labels==='numbers'){ l.textContent=NUMS[pc]; s.textContent=prettyName(k.midi); }
-      else { l.textContent=k.black?NAMES[pc].replace('#','♯'):NAMES[pc]; s.textContent=pc===0?String(o):''; }
+      const emo=`<span class="emo" aria-hidden="true">${FRIEND[pc]}</span>`;
+      if(S.labels==='none'){ l.innerHTML=emo; s.textContent=''; continue; }
+      if(S.labels==='solfege'){ l.innerHTML=emo+SOLF[pc]; s.textContent=prettyName(k.midi); }
+      else if(S.labels==='numbers'){ l.innerHTML=emo+NUMS[pc]; s.textContent=prettyName(k.midi); }
+      else { l.innerHTML=emo+(k.black?NAMES[pc].replace('#','♯'):NAMES[pc]); s.textContent=''; }
     }
   },
   layout(){
@@ -853,7 +942,7 @@ const FX={c:$('#fx'),parts:[],rings:[],
   burst(m,vel=.8,big=false){
     const p=Keys.center(m), h=hue(m);
     this.rings.push({x:p.x,y:p.y,r:6,max:big?220:90+vel*60,h,life:1,w:big?3:2});
-    (this.lbl||(this.lbl=[])).push({x:p.x,y:Keys.tray?Keys.tray.top-14:p.y-40,t:prettyName(m),h,life:1});
+    (this.lbl||(this.lbl=[])).push({x:p.x,y:Keys.tray?Keys.tray.top-18:p.y-40,t:FRIEND[m%12]+' '+NAMES[m%12].replace('#','♯'),h,life:1,c:kcolor(m)});
     if(S.reduce) return;
     const n=Math.round((big?40:12)+vel*14);
     for(let i=0;i<n && this.parts.length<420;i++){ const a=rand(-Math.PI*.95,-Math.PI*.05), sp=rand(120,big?620:430)*(.6+vel*.6);
@@ -871,7 +960,7 @@ const FX={c:$('#fx'),parts:[],rings:[],
       if(r.ell) g.ellipse(r.x,r.y,r.r,r.r*.28,0,0,7); else g.arc(r.x,r.y,r.r,0,7); g.stroke(); }
     g.globalCompositeOperation='source-over';
     for(let i=(this.lbl||[]).length-1;i>=0;i--){ const l=this.lbl[i]; l.life-=dt*1.4; l.y-=dt*40; if(l.life<=0){ this.lbl.splice(i,1); continue; }
-      g.font='700 22px Sora,Inter,sans-serif'; g.textAlign='center'; g.fillStyle=`hsla(${l.h},95%,72%,${l.life})`; g.fillText(l.t,l.x,l.y); }
+      g.font='700 34px Fredoka,Inter,sans-serif'; g.textAlign='center'; g.globalAlpha=l.life; g.lineWidth=7; g.strokeStyle='#fff'; g.strokeText(l.t,l.x,l.y); g.fillStyle=l.c||`hsl(${l.h},90%,55%)`; g.fillText(l.t,l.x,l.y); g.globalAlpha=1; }
     // hand skeleton over the full-screen video
     if(S.mirror) for(const h of Hands.map.values()){ if(!h.lm) continue; const P=h.lm.map(camToScreen);
       g.strokeStyle='rgba(255,255,255,.55)'; g.lineWidth=2; g.beginPath(); for(const [a,b] of CONN){ g.moveTo(P[a].x,P[a].y); g.lineTo(P[b].x,P[b].y); } g.stroke();
@@ -879,8 +968,9 @@ const FX={c:$('#fx'),parts:[],rings:[],
     // cursors
     if(S.gesture==='fingers'||S.gesture==='dwell'){ const cs=getComputedStyle(document.documentElement).getPropertyValue('--a2');
       for(const h of Hands.map.values()) (h.f||[]).forEach(st=>{ if(!st.active) return;
-        const col=st.down?'#3ee08f':st.hover!=null?cs:'rgba(255,255,255,.8)';
-        g.shadowColor=col; g.shadowBlur=st.down?22:10; g.fillStyle=col; g.beginPath(); g.arc(st.x,st.y,st.down?10:7,0,7); g.fill(); g.shadowBlur=0;
+        const col=st.down?'#2ecc71':st.hover!=null?kcolor(st.hover):'#ffffff';
+        g.shadowColor='rgba(0,0,0,.35)'; g.shadowBlur=8; g.fillStyle='#fff'; g.beginPath(); g.arc(st.x,st.y,st.down?17:14,0,7); g.fill(); g.shadowBlur=0;
+        g.fillStyle=col; g.beginPath(); g.arc(st.x,st.y,st.down?12:9,0,7); g.fill();
         const pr=st.prog||0; if(!st.down&&pr>.03){ g.strokeStyle='rgba(0,0,0,.5)'; g.lineWidth=7; g.beginPath(); g.arc(st.x,st.y,20,0,7); g.stroke(); g.strokeStyle=cs; g.lineWidth=5; g.beginPath(); g.arc(st.x,st.y,20,-Math.PI/2,-Math.PI/2+Math.PI*2*pr); g.stroke(); }
         const k=st.down?st.key:st.hover; if(k!=null){ g.font='700 13px Inter,sans-serif'; g.textAlign='center'; g.fillStyle='#fff'; g.strokeStyle='rgba(0,0,0,.7)'; g.lineWidth=3; g.strokeText(prettyName(k),st.x,st.y-20); g.fillText(prettyName(k),st.x,st.y-20); }
       });
@@ -900,7 +990,7 @@ let streak=0;
 on('noteon',d=>{
   FX.burst(d.midi,d.vel||.8);
   if(held.size>=3 && d.source==='user') FX.wave();
-  if(d.source==='user' && ++streak%32===0 && !S.reduce) celebrate(.5);
+  if(d.source==='user' && ++streak%16===0 && !S.reduce) celebrate(.6);
 });
 function celebrate(power=1){
   if(S.reduce || !window.confetti) return;
@@ -1260,6 +1350,7 @@ $('#glide').onchange=e=>{ S.glide=e.target.checked; save(); };
 $('#activeF').onchange=e=>{ S.activeFingers=e.target.value; save(); Hands.resetAll(); };
 $('#dwellT').oninput=e=>{ S.dwell=+e.target.value; save(); $('#dwellLbl').textContent=S.dwell.toFixed(2)+' s'; };
 $('#trayW').oninput=e=>{ S.trayW=+e.target.value; save(); applyBackground(); };
+$('#kidsT').onchange=e=>{ S.kids=e.target.checked; save(); document.body.classList.toggle('kids',S.kids); requestAnimationFrame(()=>Keys.layout()); };
 $('#hc').onchange=e=>{ S.hc=e.target.checked; save(); document.body.classList.toggle('hc',S.hc); };
 $('#mirrorT').onchange=e=>{ S.mirror=e.target.checked; save(); Hands.resetAll(); applyPip(); applyBackground(); };
 $('#trayTop').oninput=e=>{ S.trayTop=+e.target.value; save(); applyBackground(); };
@@ -1270,7 +1361,7 @@ $('#reduce').onchange=e=>{ S.reduce=e.target.checked; save(); document.body.clas
 $('#pipT').onchange=e=>{ S.pip=e.target.checked; save(); applyPip(); };
 $('#noteT').onchange=e=>{ S.noteCard=e.target.checked; save(); applyPip(); };
 function renderSettings(){ $$('#gestureSeg button').forEach(b=>b.classList.toggle('active',b.dataset.g===S.gesture)); document.body.classList.toggle('tapmode',S.gesture==='tap');
-  $('#sens').value=S.sens; $('#glide').checked=!!S.glide; $('#mirrorT').checked=!!S.mirror; $('#activeF').value=S.activeFingers||'index'; $('#dwellT').value=S.dwell||.6; $('#dwellLbl').textContent=(S.dwell||.6).toFixed(2)+' s'; $('#trayW').value=S.trayW||64; $('#hc').checked=!!S.hc; document.body.classList.toggle('hc',!!S.hc); $('#trayTop').value=S.trayTop||52; $('#octaves').value=S.octaves; $('#scale').value=S.scale; $('#labels').value=S.labels; $('#reduce').checked=S.reduce; $('#pipT').checked=S.pip; $('#noteT').checked=S.noteCard; document.body.classList.toggle('reduce',S.reduce); }
+  $('#sens').value=S.sens; $('#glide').checked=!!S.glide; $('#mirrorT').checked=!!S.mirror; $('#activeF').value=S.activeFingers||'index'; $('#dwellT').value=S.dwell||.6; $('#dwellLbl').textContent=(S.dwell||.6).toFixed(2)+' s'; $('#trayW').value=S.trayW||64; $('#hc').checked=!!S.hc; $('#kidsT').checked=S.kids!==false; document.body.classList.toggle('kids',S.kids!==false); document.body.classList.toggle('hc',!!S.hc); $('#trayTop').value=S.trayTop||52; $('#octaves').value=S.octaves; $('#scale').value=S.scale; $('#labels').value=S.labels; $('#reduce').checked=S.reduce; $('#pipT').checked=S.pip; $('#noteT').checked=S.noteCard; document.body.classList.toggle('reduce',S.reduce); }
 function applyPip(){ const showPip=S.pip&&Tracker.on; $('#pip').classList.toggle('hidden',!showPip); $('#noteCard').classList.toggle('hidden',!S.noteCard); }
 
 // Scene panel
@@ -1316,8 +1407,8 @@ const steps=n=>`<div class="steps">${[0,1,2,3].map(i=>`<i class="${i<=n?'on':''}
 let obStep=null, obTarget=null;
 function onboard(step=0,err=''){
   obStep=step;
-  if(step===0) overlay(`<div class="card glass">${steps(0)}<h2>Play music with your hands</h2><p>Fun and Play Keys turns your webcam into a piano. Point at a key, pinch your fingers, and it plays. No musical experience needed.</p><div class="actions"><button class="btn primary" id="ob1">Let’s start</button></div></div>`), $('#ob1').onclick=async()=>{ await ensureAudio(); onboard(1); };
-  if(step===1) overlay(`<div class="card glass">${steps(1)}<h2>Turn on your camera</h2><p>Fun and Play Keys watches your hands to know which key you’re playing. <b>Your video stays on this device</b> — nothing is recorded or uploaded.</p>${err?`<p class="err">${err}</p>`:''}<div class="actions"><button class="btn primary" id="ob2">Turn on camera</button><button class="btn" id="obSkip">Use mouse & keyboard instead</button></div></div>`),
+  if(step===0) overlay(`<div class="card glass">${steps(0)}<h2>Hi! Let’s make music 🎶</h2><p>Fun n Play turns your webcam into a piano. Point at a key, pinch your fingers, and it plays. No musical experience needed.</p><div class="actions"><button class="btn primary" id="ob1">🎉 Let’s play!</button></div></div>`), $('#ob1').onclick=async()=>{ await ensureAudio(); onboard(1); };
+  if(step===1) overlay(`<div class="card glass">${steps(1)}<h2>Turn on your camera</h2><p>Fun n Play watches your hands to know which key you’re playing. <b>Your video stays on this device</b> — nothing is recorded or uploaded.</p>${err?`<p class="err">${err}</p>`:''}<div class="actions"><button class="btn primary" id="ob2">Turn on camera</button><button class="btn" id="obSkip">Use mouse & keyboard instead</button></div></div>`),
     $('#ob2').onclick=async()=>{ $('#ob2').textContent='Starting…'; try{ await startCamera(); onboard(2); }catch(e){ onboard(1,camError(e)); } },
     $('#obSkip').onclick=()=>{ finishOnboard(); toast('Click or tap the keys, or use A S D F… on your keyboard',4000); };
   if(step===2) overlay(`<div class="card glass">${steps(2)}<h2>Show your hands</h2><p>You’ll see yourself on screen with the keyboard on top. Sit about an arm’s length away with good light on your hands, and hold your hands up so your fingertips sit <b>over the keys on screen</b>, like on a real piano. Your index fingertips get a dot each. <b>Rest a dot on a key</b> — the ring fills and the note plays (or bend the finger to play instantly). Keys in the way? Settings → Keyboard position. (Keys too high or low? Settings → Keyboard height.)</p><p id="obHands" style="color:var(--text);font-weight:600">Looking for your hands…</p><div class="actions"><button class="btn primary" id="ob3" disabled style="opacity:.5">Next</button></div></div>`),
